@@ -1616,6 +1616,10 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   display: none;
 }
 
+/* =============================== */
+/* 🌷 TULIP + FIREFLIES + NOTE PINK-VIOLET THEME */
+/* =============================== */
+
 /* 🌷 Tulip Petal Shape */
 .flower__leaf {
   width: 7vmin;
@@ -1759,132 +1763,6 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
 }
 
 /* Shake animation */
-@keyframes shakeAttention {
-  0% { transform: translateX(0); }
-  15% { transform: translateX(-4px); }
-  30% { transform: translateX(4px); }
-  45% { transform: translateX(-4px); }
-  60% { transform: translateX(4px); }
-  75% { transform: translateX(-2px); }
-  100% { transform: translateX(0); }
-}
-/* 🌟 Fireflies - pink-violet glow */
-.fireflies {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.firefly {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, #f72585 0%, #b5179e 40%, transparent 70%);
-  border-radius: 50%;
-  box-shadow: 
-    0 0 6px #ff49b4,
-    0 0 12px #b5179e,
-    0 0 18px #7209b7;
-  opacity: 0;
-  animation: flicker 2s infinite alternate ease-in-out;
-}
-
-@keyframes flicker {
-  0% { opacity: 0.2; }
-  100% { opacity: 1; }
-}
-
-/* Firefly motion */
-@keyframes floatUp {
-  0% { transform: translateY(100vh) translateX(0); }
-  100% { transform: translateY(-10vh) translateX(50px); }
-}
-
-/* Firefly positions */
-.firefly:nth-child(1) { left: 10%; animation-duration: 12s; }
-.firefly:nth-child(2) { left: 25%; animation-duration: 9s; }
-.firefly:nth-child(3) { left: 40%; animation-duration: 14s; }
-.firefly:nth-child(4) { left: 55%; animation-duration: 11s; }
-.firefly:nth-child(5) { left: 70%; animation-duration: 13s; }
-.firefly:nth-child(6) { left: 80%; animation-duration: 10s; }
-.firefly:nth-child(7) { left: 35%; animation-duration: 15s; }
-.firefly:nth-child(8) { left: 60%; animation-duration: 8s; }
-
-/* 💌 Note */
-.note {
-  position: fixed;
-  top: 5vmin;
-  right: 5vmin;
-  padding: 1vmin 2vmin;
-  background: linear-gradient(135deg, #f72585, #7209b7);
-  color: white;
-  font-size: 1.8vmin;
-  border-radius: 2vmin;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 0 2vmin rgba(247,37,133,0.6);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: shakeAttention 1.2s ease-in-out infinite;
-}
-
-.note:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 3vmin rgba(255,73,180,0.9);
-  animation: shakeAttention 0.6s ease-in-out infinite;
-}
-
-/* Popup */
-.message-popup {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.message-box {
-  background: linear-gradient(135deg, #7209b7, #f72585);
-  padding: 4vmin;
-  border-radius: 2vmin;
-  text-align: center;
-  color: white;
-  font-size: 2vmin;
-  max-width: 40vmin;
-  box-shadow: 0 0 3vmin rgba(255,73,180,0.7);
-  transform: scale(0.8);
-}
-
-.message-box button {
-  margin-top: 2vmin;
-  padding: 1vmin 2vmin;
-  border: none;
-  border-radius: 1vmin;
-  background: #f72585;
-  color: white;
-  cursor: pointer;
-  font-size: 1.6vmin;
-  transition: background 0.2s ease;
-}
-
-.message-box button:hover {
-  background: #ff49b4;
-}
-
-/* Glow pulse */
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 2vmin rgba(247,37,133,0.6); }
-  50% { box-shadow: 0 0 5vmin rgba(255,73,180,0.9); }
-  100% { box-shadow: 0 0 2vmin rgba(247,37,133,0.6); }
-}
-
-/* Shake for note */
 @keyframes shakeAttention {
   0% { transform: translateX(0); }
   15% { transform: translateX(-4px); }
