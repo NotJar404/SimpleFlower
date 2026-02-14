@@ -1616,10 +1616,6 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   display: none;
 }
 
-/* =============================== */
-/* 🌷 TULIP + FIREFLIES + NOTE PINK-VIOLET THEME */
-/* =============================== */
-
 /* 🌷 Tulip Petal Shape */
 .flower__leaf {
   width: 7vmin;
@@ -1627,10 +1623,10 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   border-radius: 50% 50% 40% 40%;
   background: linear-gradient(
     to top,
-    #b5179e,
+    #3a0ca3,
     #7209b7 40%,
-    #f72585 75%,
-    #ff49b4
+    #b5179e 75%,
+    #f72585
   );
   box-shadow:
     inset 0 -1vmin 2vmin rgba(0,0,0,0.4),
@@ -1658,7 +1654,7 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
 .flower__leaf--4 {
   width: 6vmin;
   height: 10vmin;
-  background: linear-gradient(to top, #7209b7, #b5179e);
+  background: linear-gradient(to top, #480ca8, #7209b7);
   transform: translate(-50%, 10%) scale(0.8);
   opacity: 0.7;
   border-radius: 50%;
@@ -1692,27 +1688,24 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   --c: #166534;
 }
 
-/* 💌 Click Me Note */
 .note {
   position: fixed;
   top: 5vmin;
   right: 5vmin;
   padding: 1vmin 2vmin;
-  background: linear-gradient(135deg, #f72585, #7209b7);
+  background: linear-gradient(135deg, #7209b7, #b5179e);
   color: white;
   font-size: 1.8vmin;
   border-radius: 2vmin;
   cursor: pointer;
   z-index: 999;
-  box-shadow: 0 0 2vmin rgba(247,37,133,0.6);
+  box-shadow: 0 0 2vmin rgba(183, 23, 158, 0.6);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: shakeAttention 1.2s ease-in-out infinite;
 }
 
 .note:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 3vmin rgba(247,37,133,0.9);
-  animation: shakeAttention 0.6s ease-in-out infinite;
+  box-shadow: 0 0 3vmin rgba(247, 37, 133, 0.9);
 }
 
 /* Popup background */
@@ -1728,14 +1721,15 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
 
 /* Popup box */
 .message-box {
-  background: linear-gradient(135deg, #7209b7, #f72585);
+  background: linear-gradient(135deg, #240046, #3c096c);
   padding: 4vmin;
   border-radius: 2vmin;
   text-align: center;
   color: white;
   font-size: 2vmin;
   max-width: 40vmin;
-  box-shadow: 0 0 3vmin rgba(247,37,133,0.7);
+  box-shadow: 0 0 3vmin rgba(183, 23, 158, 0.7);
+  
   transform: scale(0.8);
 }
 
@@ -1744,7 +1738,7 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   padding: 1vmin 2vmin;
   border: none;
   border-radius: 1vmin;
-  background: #f72585;
+  background: #b5179e;
   color: white;
   cursor: pointer;
   font-size: 1.6vmin;
@@ -1752,16 +1746,15 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
 }
 
 .message-box button:hover {
-  background: #ff49b4;
+  background: #f72585;
 }
 
 /* Glow pulse */
 @keyframes glowPulse {
-  0% { box-shadow: 0 0 2vmin rgba(247,37,133,0.6); }
-  50% { box-shadow: 0 0 5vmin rgba(255,73,180,0.9); }
-  100% { box-shadow: 0 0 2vmin rgba(247,37,133,0.6); }
+  0% { box-shadow: 0 0 2vmin rgba(183, 23, 158, 0.6); }
+  50% { box-shadow: 0 0 5vmin rgba(247, 37, 133, 0.9); }
+  100% { box-shadow: 0 0 2vmin rgba(183, 23, 158, 0.6); }
 }
-
 /* Shake animation */
 @keyframes shakeAttention {
   0% { transform: translateX(0); }
@@ -1773,7 +1766,18 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   100% { transform: translateX(0); }
 }
 
-/* 🌟 Fireflies */
+/* Apply only to the Click Me button */
+.note {
+  cursor: pointer;
+  animation: shakeAttention 1.2s ease-in-out infinite;
+}
+
+/* Optional: stronger effect when hovering */
+.note:hover {
+  animation: shakeAttention 0.6s ease-in-out infinite;
+}
+
+
 .fireflies {
   position: fixed;
   top: 0;
@@ -1789,19 +1793,14 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   position: absolute;
   width: 4px;
   height: 4px;
-  background: radial-gradient(circle, #f72585 0%, #7209b7 40%, transparent 70%);
+  background: radial-gradient(circle, #e0aaff 0%, #b84dff 40%, transparent 70%);
   border-radius: 50%;
   box-shadow: 
-    0 0 6px #ff49b4,
-    0 0 12px #b5179e,
-    0 0 18px #7209b7;
+    0 0 6px #c266ff,
+    0 0 12px #9933ff,
+    0 0 18px #7a00cc;
   opacity: 0;
   animation: flicker 2s infinite alternate ease-in-out;
-}
-
-@keyframes flicker {
-  0% { opacity: 0.2; }
-  100% { opacity: 1; }
 }
 
 @keyframes floatUp {
@@ -1811,6 +1810,11 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   100% {
     transform: translateY(-10vh) translateX(50px);
   }
+}
+
+@keyframes flicker {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
 }
 
 .firefly:nth-child(1) { left: 10%; animation-duration: 12s; }
