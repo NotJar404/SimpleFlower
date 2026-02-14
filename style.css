@@ -1616,79 +1616,123 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   display: none;
 }
 
-/* 🌷 Tulip Petal Shape */
+/* 🌹 Rose Container */
+.flowers {
+  position: absolute;
+  bottom: 10vmin;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .flower__leaf {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 7vmin;
   height: 13vmin;
   border-radius: 50% 50% 40% 40%;
   background: linear-gradient(
     to top,
-    #b5179e,
-    #7209b7 40%,
-    #f72585 75%,
+    #f72585,
+    #b5179e 40%,
+    #7209b7 75%,
     #ff49b4
   );
   box-shadow:
-    inset 0 -1vmin 2vmin rgba(0,0,0,0.4),
-    inset 0 1vmin 1.5vmin rgba(255,255,255,0.25);
+    inset 0 -1vmin 2vmin rgba(0,0,0,0.3),
+    inset 0 1vmin 1.5vmin rgba(255,255,255,0.25),
+    0 0 1vmin rgba(255,73,180,0.6);
+  transform-origin: bottom center;
   opacity: 0.95;
 }
 
-/* Middle front petal */
-.flower__leaf--2 {
-  transform: translate(-50%, -2%) rotateX(15deg);
-  z-index: 5;
-}
+/* Spiral petal arrangement */
+.flower__leaf--1 { transform: translate(-50%, -80%) rotate(-15deg) rotateX(10deg); z-index: 2; }
+.flower__leaf--2 { transform: translate(-50%, -85%) rotate(0deg) rotateX(15deg); z-index: 3; }
+.flower__leaf--3 { transform: translate(-50%, -80%) rotate(15deg) rotateX(10deg); z-index: 2; }
+.flower__leaf--4 { width: 6vmin; height: 10vmin; background: linear-gradient(to top, #7209b7, #b5179e); transform: translate(-50%, -70%) scale(0.8); opacity: 0.8; border-radius: 50%; z-index: 1; }
 
-/* Left petal */
-.flower__leaf--1 {
-  transform: translate(-85%, 2%) rotate(-12deg);
-}
+/* Middle front petal for depth */
+.flower__leaf--5 { transform: translate(-50%, -90%) rotate(30deg) rotateX(20deg); z-index: 4; }
+.flower__leaf--6 { transform: translate(-50%, -95%) rotate(-30deg) rotateX(20deg); z-index: 4; }
+.flower__leaf--7 { transform: translate(-50%, -100%) rotate(60deg) rotateX(25deg); z-index: 5; }
+.flower__leaf--8 { transform: translate(-50%, -100%) rotate(-60deg) rotateX(25deg); z-index: 5; }
 
-/* Right petal */
-.flower__leaf--3 {
-  transform: translate(-15%, 2%) rotate(12deg);
-}
-
-/* Back petal hidden smaller */
-.flower__leaf--4 {
-  width: 6vmin;
-  height: 10vmin;
-  background: linear-gradient(to top, #7209b7, #b5179e);
-  transform: translate(-50%, 10%) scale(0.8);
-  opacity: 0.7;
-  border-radius: 50%;
-}
-
-/* 🌿 Tulip Stem */
+/* Stem */
 .flower__line {
-  background-image: linear-gradient(
-    to top,
-    #14532d,
-    #166534 40%,
-    #16a34a
-  );
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 1.2vmin;
+  height: 25vmin;
+  background-image: linear-gradient(to top, #14532d, #166534 40%, #16a34a);
   border-radius: 1vmin;
+  transform: translateX(-50%);
+  z-index: 0;
 }
 
-/* 🌿 Stem leaves darker green */
+/* Stem Leaves */
 .flower__line__leaf {
-  background-image: linear-gradient(
-    to top,
-    #14532d,
-    #16a34a
-  );
+  position: absolute;
+  width: 6vmin;
+  height: 3vmin;
+  background-image: linear-gradient(to right, #14532d, #16a34a);
+  border-radius: 50%;
+  top: 115%;
+}
+.flower__line__leaf--1 { left: 35%; transform: rotate(-30deg); }
+.flower__line__leaf--2 { left: 55%; transform: rotate(30deg); }
+.flower__line__leaf--3 { left: 30%; transform: rotate(-25deg); }
+.flower__line__leaf--4 { left: 60%; transform: rotate(25deg); }
+
+/* 🌟 Fireflies - pink-violet glow */
+.fireflies {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* 🌿 Grass recolor (optional but nicer match) */
-.flower__grass,
-.flower__g-long,
-.long-g .leaf {
-  --c: #166534;
+.firefly {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #f72585 0%, #b5179e 40%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 6px #ff49b4,
+    0 0 12px #b5179e,
+    0 0 18px #7209b7;
+  opacity: 0;
+  animation: flicker 2s infinite alternate ease-in-out;
 }
 
-/* 💌 Click Me Note */
+@keyframes flicker {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Firefly motion */
+@keyframes floatUp {
+  0% { transform: translateY(100vh) translateX(0); }
+  100% { transform: translateY(-10vh) translateX(50px); }
+}
+
+/* Firefly positions */
+.firefly:nth-child(1) { left: 10%; animation-duration: 12s; }
+.firefly:nth-child(2) { left: 25%; animation-duration: 9s; }
+.firefly:nth-child(3) { left: 40%; animation-duration: 14s; }
+.firefly:nth-child(4) { left: 55%; animation-duration: 11s; }
+.firefly:nth-child(5) { left: 70%; animation-duration: 13s; }
+.firefly:nth-child(6) { left: 80%; animation-duration: 10s; }
+.firefly:nth-child(7) { left: 35%; animation-duration: 15s; }
+.firefly:nth-child(8) { left: 60%; animation-duration: 8s; }
+
+/* 💌 Note */
 .note {
   position: fixed;
   top: 5vmin;
@@ -1707,22 +1751,21 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
 
 .note:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 3vmin rgba(247,37,133,0.9);
+  box-shadow: 0 0 3vmin rgba(255,73,180,0.9);
   animation: shakeAttention 0.6s ease-in-out infinite;
 }
 
-/* Popup background */
+/* Popup */
 .message-popup {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-/* Popup box */
 .message-box {
   background: linear-gradient(135deg, #7209b7, #f72585);
   padding: 4vmin;
@@ -1731,7 +1774,7 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   color: white;
   font-size: 2vmin;
   max-width: 40vmin;
-  box-shadow: 0 0 3vmin rgba(247,37,133,0.7);
+  box-shadow: 0 0 3vmin rgba(255,73,180,0.7);
   transform: scale(0.8);
 }
 
@@ -1758,7 +1801,7 @@ mask-image: linear-gradient(135deg, #159faa 0%, #159faa 40%, transparent 60%, tr
   100% { box-shadow: 0 0 2vmin rgba(247,37,133,0.6); }
 }
 
-/* Shake animation */
+/* Shake for note */
 @keyframes shakeAttention {
   0% { transform: translateX(0); }
   15% { transform: translateX(-4px); }
